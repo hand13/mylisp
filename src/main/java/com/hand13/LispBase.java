@@ -16,10 +16,10 @@ public class LispBase {
 
         }else if(isLambda(value)) {
             return new HighProcedure((List)value,env);
+
+        }else if(isQuoted(value)) {
+            return new List("haha",null);
         }
-        return null;
-    }
-    public static Object parse(String exp) {
         return null;
     }
     public static Object apply(Procedure procedure,List args) {
@@ -33,6 +33,9 @@ public class LispBase {
         return result;
     }
 
+    public static boolean isQuoted(Object value) {
+        return false;
+    }
     public static boolean isExp(Object value) {
         return value instanceof List && (! isInner(value));
     }
