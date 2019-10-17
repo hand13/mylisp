@@ -50,7 +50,7 @@ public class ListParser {
            return getNextList();
        }
        if(token.equals("'")) {
-           return new QuotedList(getNextObject());
+           return new QuotedObject(getNextObject());
        }
        //字符串
        if(token.startsWith("\"")) {

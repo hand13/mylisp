@@ -18,7 +18,7 @@ public class LispBase {
             return new HighProcedure((List)value,env);
 
         }else if(isQuoted(value)) {
-            return new List("haha",null);
+            return ((QuotedObject)value).value;
         }
         return null;
     }
@@ -34,7 +34,7 @@ public class LispBase {
     }
 
     public static boolean isQuoted(Object value) {
-        return false;
+        return value instanceof QuotedObject;
     }
     public static boolean isExp(Object value) {
         return value instanceof List && (! isInner(value));
@@ -86,6 +86,11 @@ public class LispBase {
         env.put("car", new Procedure() {
             public Object apply(List args) {
                 return LispBase.car((List)args.fst);
+            }
+        });
+        env.put("cdr", new Procedure() {
+            public Object apply(List args) {
+                return LispBase.cdr((List)args.fst);
             }
         });
         env.put("cons", new Procedure() {

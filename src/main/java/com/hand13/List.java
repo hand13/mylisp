@@ -21,4 +21,9 @@ public class List {
         }
         return i;
     }
+
+    @Override
+    public String toString() {
+        return "( " + fst + " " + snd +")";
+    }
 }
