@@ -83,17 +83,17 @@ public class LispBase {
                 return m;
             }
         });
-        env.put("car", new Procedure() {
+        env.put("car", new PrimitiveProcedure() {
             public Object apply(List args) {
                 return LispBase.car((List)args.fst);
             }
         });
-        env.put("cdr", new Procedure() {
+        env.put("cdr", new PrimitiveProcedure() {
             public Object apply(List args) {
                 return LispBase.cdr((List)args.fst);
             }
         });
-        env.put("cons", new Procedure() {
+        env.put("cons", new PrimitiveProcedure() {
             public Object apply(List args) {
                 return new List(args.fst,((List)args.snd).fst);
             }

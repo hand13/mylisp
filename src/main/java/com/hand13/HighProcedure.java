@@ -21,7 +21,7 @@ public class HighProcedure implements Procedure {
             argList = new String[a.length()];
             List t = a;
             for(int i = 0;i<argList.length;i++) {
-                argList[i] = (String)t.fst;
+                argList[i] = ((Symbol)t.fst).value;
                 t = (List)t.snd;
             }
         }

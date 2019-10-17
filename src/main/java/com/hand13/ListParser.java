@@ -6,6 +6,9 @@ import static com.hand13.Token.LAMBDA;
 
 public class ListParser {
    private TokenStream ts;
+   private final String[] inners = {
+           "lambda","define"
+   };
 
    public ListParser(InputStream in) {
        ts = new TokenStream(in);
@@ -38,7 +41,14 @@ public class ListParser {
        return header;
    }
    public boolean isInner(String token) {
-       return token.equals("lambda");
+       boolean result = false;
+       for(String inn:inners) {
+           if(inn.equals(token)) {
+               result = true;
+               break;
+           }
+       }
+       return result;
    }
    public Object getNextObject() {
        String token = ts.getNextToken();
@@ -60,8 +70,11 @@ public class ListParser {
            return Double.valueOf(token);
        }
        if(isInner(token)) {
-           return LAMBDA;
+           return string2Token(token);
        }
        return new Symbol(token);
    }
+   public Token string2Token(String value) {
+       return LAMBDA;
+    }
 }
