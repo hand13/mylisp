@@ -20,4 +20,9 @@ public class Env {
         }
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "environment";
+    }
 }

@@ -54,7 +54,7 @@ public class TokenStream {
         char m = this.nextCleanChar();
         if(m == 0){
             currentToken = null;
-        }else if(m == '(' || m == ')') {
+        }else if(m == '(' || m == ')' || m == '\'') {
             currentToken = String.valueOf(m);
         }else if(m == '"') {
             currentToken = getQuotedString();

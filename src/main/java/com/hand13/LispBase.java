@@ -29,7 +29,7 @@ public class LispBase {
     public static void define(Object value,Env env) {
         List def = (List)value;
         Symbol varSymbol = (Symbol)cdar(def);
-        List exp = (List)(car((List)(cddr(def))));
+        Object exp = (car((List)(cddr(def))));
         String var = varSymbol.value;
         if(env.getValue(var) != null) {
             throw new RuntimeException("re definition");
@@ -93,7 +93,7 @@ public class LispBase {
     public static Object cddar(List value) {
         return ((List)cddr(value)).fst;
     }
-    public static void initEnv(Env env) {
+    public static void initEnv(final Env env) {
         env.put("+", new Procedure() {
             public Object apply(List args) {
                 double m = 0;
@@ -118,6 +118,27 @@ public class LispBase {
         env.put("cons", new PrimitiveProcedure() {
             public Object apply(List args) {
                 return new List(args.fst,((List)args.snd).fst);
+            }
+        });
+        env.put("display", new PrimitiveProcedure() {
+            @Override
+            public Object apply(List args) {
+                if(args.fst != null) {
+                    System.out.println(args.fst);
+                }
+                return null;
+            }
+        });
+        env.put("eval", new PrimitiveProcedure() {
+            @Override
+            public Object apply(List args) {
+                return eval((car(args)),env);
+            }
+        });
+        env.put("null?", new PrimitiveProcedure() {
+            @Override
+            public Object apply(List args) {
+                return args == null || (args.fst == null && args.snd == null);
             }
         });
     }

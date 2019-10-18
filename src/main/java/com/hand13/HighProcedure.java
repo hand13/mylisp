@@ -46,4 +46,9 @@ public class HighProcedure implements Procedure {
         }
         return tmp;
     }
+
+    @Override
+    public String toString() {
+        return "lambda procedure";
+    }
 }
