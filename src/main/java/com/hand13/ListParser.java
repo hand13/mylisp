@@ -2,6 +2,7 @@ package com.hand13;
 
 import java.io.InputStream;
 
+import static com.hand13.Token.DEFINE;
 import static com.hand13.Token.LAMBDA;
 
 public class ListParser {
@@ -74,7 +75,14 @@ public class ListParser {
        }
        return new Symbol(token);
    }
-   public Token string2Token(String value) {
-       return LAMBDA;
+   private Token string2Token(String value) {
+       switch (value){
+           case "lambda":
+               return LAMBDA;
+           case "define":
+               return DEFINE;
+           default:
+               return null;
+       }
     }
 }

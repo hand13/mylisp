@@ -1,5 +1,6 @@
 package com.hand13;
 
+import static com.hand13.Token.DEFINE;
 import static com.hand13.Token.LAMBDA;
 
 public class LispBase {
@@ -19,9 +20,23 @@ public class LispBase {
 
         }else if(isQuoted(value)) {
             return ((QuotedObject)value).value;
+        }else if(isDefine(value)) {
+            define(value,env);
         }
         return null;
     }
+
+    public static void define(Object value,Env env) {
+        List def = (List)value;
+        Symbol varSymbol = (Symbol)cdar(def);
+        List exp = (List)(car((List)(cddr(def))));
+        String var = varSymbol.value;
+        if(env.getValue(var) != null) {
+            throw new RuntimeException("re definition");
+        }
+        env.put(var,eval(exp,env));
+    }
+
     public static Object apply(Procedure procedure,List args) {
         return procedure.apply(args);
     }
@@ -32,6 +47,13 @@ public class LispBase {
         }
         return result;
     }
+    public static boolean isDefine(Object value) {
+        if(value instanceof List) {
+            Object first = ((List) value).fst;
+            return first == DEFINE;
+        }
+        return false;
+    }
 
     public static boolean isQuoted(Object value) {
         return value instanceof QuotedObject;
@@ -41,7 +63,7 @@ public class LispBase {
     }
 
     public static boolean isInner(Object value) {
-        return isLambda(value);
+        return isLambda(value) || isDefine(value);
     }
     public static  boolean isLambda(Object value) {
         if(value instanceof List) {
