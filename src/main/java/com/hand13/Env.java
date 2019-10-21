@@ -1,10 +1,14 @@
 package com.hand13;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Env {
     public Map<String,Object> env;
     public Env up;
+    public Env() {
+        env = new HashMap<>();
+    }
 
     public Env(Map<String, Object> env, Env up) {
         this.env = env;
