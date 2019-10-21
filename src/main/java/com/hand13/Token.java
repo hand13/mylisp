@@ -4,5 +4,6 @@ public enum Token {
     LAMBDA,
     DEFINE,
     BEGIN,
-    IF
+    IF,
+    DEFINE_SYNTAX
 }

@@ -1,7 +1,6 @@
 package com.hand13;
 
-import static com.hand13.Token.DEFINE;
-import static com.hand13.Token.LAMBDA;
+import static com.hand13.Token.*;
 
 public class LispBase {
     public static Object eval(Object value,Env env) {
@@ -19,21 +18,62 @@ public class LispBase {
             return new HighProcedure((List)value,env);
 
         }else if(isQuoted(value)) {
+
             return ((QuotedObject)value).value;
+
         }else if(isDefine(value)) {
+
             define(value,env);
+
+        }else if(isIf(value)) {
+
+            return IF(value,env);
+
+        }else if(isBegin(value)) {
+
+            return begin(value,env);
         }
         return null;
     }
 
+    public static Object IF(Object value,Env env){
+        List exp = (List)value;
+        List predicate = (List)cdar(exp);
+        Object yes = cddar(exp);
+        Object no = (cddar((List)cdr(exp)));
+        Boolean p = (Boolean)(eval(predicate,env));
+        if(p == null) {
+            throw new RuntimeException("if null occurs");
+        }
+        if(p) {
+            return eval(yes,env);
+        }else {
+
+            return eval(no,env);
+        }
+    }
+    public static Object begin(Object value,Env env) {
+        List exps = (List)(cdr((List)value));
+        if(exps == null) {
+            throw new RuntimeException("begin is null");
+        }
+        List tmp = exps;
+        Object result = null;
+        while(tmp != null) {
+            result = eval(car(tmp),env);
+            tmp = (List)cdr(tmp);
+        }
+        return result;
+    }
     public static void define(Object value,Env env) {
         List def = (List)value;
         Symbol varSymbol = (Symbol)cdar(def);
         Object exp = (car((List)(cddr(def))));
         String var = varSymbol.value;
+        /*
         if(env.getValue(var) != null) {
             throw new RuntimeException("re definition");
-        }
+        }*/
         env.put(var,eval(exp,env));
     }
 
@@ -63,12 +103,26 @@ public class LispBase {
     }
 
     public static boolean isInner(Object value) {
-        return isLambda(value) || isDefine(value);
+        return isLambda(value) || isDefine(value) || isBegin(value) || isIf(value);
     }
     public static  boolean isLambda(Object value) {
         if(value instanceof List) {
             Object first = ((List) value).fst;
             return first == LAMBDA;
+        }
+        return false;
+    }
+    public static boolean isIf(Object value) {
+        if(value instanceof List) {
+            Object first = ((List) value).fst;
+            return first == IF;
+        }
+        return false;
+    }
+    public static boolean isBegin(Object value) {
+        if(value instanceof List) {
+            Object first = ((List) value).fst;
+            return first == BEGIN;
         }
         return false;
     }
@@ -124,7 +178,7 @@ public class LispBase {
             @Override
             public Object apply(List args) {
                 if(args.fst != null) {
-                    System.out.println(args.fst);
+                    System.out.print(args.fst);
                 }
                 return null;
             }
@@ -139,6 +193,54 @@ public class LispBase {
             @Override
             public Object apply(List args) {
                 return args == null || (args.fst == null && args.snd == null);
+            }
+        });
+        env.put(">", new PrimitiveProcedure() {
+            @Override
+            public Object apply(List args) {
+                Double a1 = (Double)car(args);
+                Double a2 = (Double)cdar(args);
+                return a1 > a2;
+            }
+        });
+        env.put("<", new PrimitiveProcedure() {
+            @Override
+            public Object apply(List args) {
+                Double a1 = (Double)car(args);
+                Double a2 = (Double)cdar(args);
+                return a1 < a2;
+            }
+        });
+        env.put("=", new PrimitiveProcedure() {
+            @Override
+            public Object apply(List args) {
+                Double a1 = (Double)car(args);
+                Double a2 = (Double)cdar(args);
+                return a1.equals(a2);
+            }
+        });
+        env.put("and", new PrimitiveProcedure() {
+            @Override
+            public Object apply(List args) {
+                Boolean result = true;
+                for(Object o:args) {
+                    if(o != null) {
+                        result = result && (Boolean)o;
+                    }
+                }
+                return result;
+            }
+        });
+        env.put("or", new PrimitiveProcedure() {
+            @Override
+            public Object apply(List args) {
+                Boolean result = false;
+                for(Object o : args) {
+                    if( o != null) {
+                        result = result || (Boolean)o;
+                    }
+                }
+                return result;
             }
         });
     }

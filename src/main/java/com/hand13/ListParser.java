@@ -2,13 +2,12 @@ package com.hand13;
 
 import java.io.InputStream;
 
-import static com.hand13.Token.DEFINE;
-import static com.hand13.Token.LAMBDA;
+import static com.hand13.Token.*;
 
 public class ListParser {
     private TokenStream ts;
     private final String[] inners = {
-            "lambda", "define"
+            "lambda", "define","if","begin"
     };
 
     public ListParser(InputStream in) {
@@ -87,6 +86,10 @@ public class ListParser {
                 return LAMBDA;
             case "define":
                 return DEFINE;
+            case "if":
+                return IF;
+            case "begin":
+                return BEGIN;
             default:
                 return null;
         }
@@ -96,13 +99,12 @@ public class ListParser {
         if (value == null) {
             return null;
         }
+        if(value.equals("#t")) {
+            return true;
+        }else if(value.equals("#f")) {
+            return false;
+        }
         if (value.startsWith("#\\")) {
-            if (value.equals("#\\t")) {
-                return true;
-            }
-            if (value.equals("#\\f")) {
-                return false;
-            }
             String ch = value.substring(2);
             return s2c(ch);
         }

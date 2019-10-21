@@ -1,6 +1,8 @@
 package com.hand13;
 
-public class List {
+import java.util.Iterator;
+
+public class List implements Iterable<Object>{
 
     public Object fst;
     public Object snd;
@@ -25,5 +27,37 @@ public class List {
     @Override
     public String toString() {
         return "( " + fst + " " + snd +")";
+    }
+
+    @Override
+    public Iterator<Object> iterator() {
+        if(!LispUtils.isPList(this)) {
+            throw  new RuntimeException("not a plist");
+        }
+        return new ListIterator();
+    }
+    class  ListIterator implements Iterator<Object> {
+
+        private List currentNode;
+        ListIterator() {
+            currentNode = List.this;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return currentNode != null && currentNode.fst != null;
+        }
+
+        @Override
+        public Object next() {
+            Object r = currentNode.fst;
+            currentNode = (List)currentNode.snd;
+            return r;
+        }
+
+        @Override
+        public void remove() {
+            throw new RuntimeException("not support");
+        }
     }
 }

@@ -33,7 +33,7 @@ public class TokenStream {
     }
     public char nextCleanChar() {
         char m = nextChar();
-        if(m == ' ') {
+        if(m == ' ' || m  == '\n' || m == '\t') {
             return nextCleanChar();
         }
         return m;
