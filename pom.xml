@@ -6,7 +6,8 @@
 
     <groupId>com.hand13</groupId>
     <artifactId>lisp</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.01</version>
+    <description>my lisp machine</description>
     <build>
         <plugins>
             <plugin>
