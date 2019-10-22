@@ -247,6 +247,14 @@ public class LispBase {
                 return result;
             }
         });
+        env.put("-", new PrimitiveProcedure() {
+            @Override
+            public Object apply(List args) {
+                Double a1 = (Double)car(args);
+                Double a2 = (Double)cdar(args);
+                return a1 - a2;
+            }
+        });
     }
     public static String show(Object o) {
         if( o != null) {
