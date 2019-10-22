@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="745d4fcc-e251-4047-8230-7823b44fbc2f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hand13/LispBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand13/LispBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hand13/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand13/List.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hand13/ListParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand13/ListParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/main.ss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main.ss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,20 +38,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/ListParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="119" column="36" selection-start-line="119" selection-start-column="36" selection-end-line="119" selection-end-column="36" />
+            <state relative-caret-position="1261">
+              <caret line="120" column="12" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/Token.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -90,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/List.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="220">
+              <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
               <folding>
                 <element signature="e#573#617#1" expanded="true" />
                 <element signature="e#593#616#0" expanded="true" />
@@ -124,18 +112,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/LispBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="248" column="23" selection-start-line="248" selection-start-column="23" selection-end-line="248" selection-end-column="23" />
+            <state relative-caret-position="119">
+              <caret line="176" column="27" lean-forward="true" selection-start-line="176" selection-start-column="27" selection-end-line="176" selection-end-column="27" />
               <folding>
                 <element signature="e#2148#2149#0" expanded="true" />
                 <element signature="e#2192#2193#0" expanded="true" />
                 <element signature="method#isDefine#0;class#LispBase#0" />
+                <element signature="e#5226#5477#0" expanded="true" />
+                <element signature="e#5476#5477#0" expanded="true" />
                 <element signature="e#5763#5917#0" expanded="true" />
                 <element signature="e#5916#5917#0" expanded="true" />
-                <element signature="e#7428#7528#0" expanded="true" />
-                <element signature="e#7428#7528#0" expanded="true" />
+                <element signature="e#7611#7711#0" expanded="true" />
+                <element signature="e#7611#7711#0" expanded="true" />
                 <element signature="e#7587#7599#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="140">
+                <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -153,11 +155,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/main.ss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="40">
-              <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+              <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -193,15 +195,16 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hand13/Lisp.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/hand13/ListParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hand13/LispBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hand13/List.java" />
         <option value="$PROJECT_DIR$/src/main/resources/main.ss" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hand13/LispBase.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="111" />
-    <option name="y" value="72" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="54" />
+    <option name="y" value="109" />
     <option name="width" value="1296" />
     <option name="height" value="766" />
   </component>
@@ -222,45 +225,6 @@
             <path>
               <item name="lisp" type="b2602c69:ProjectViewProjectNode" />
               <item name="lisp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lisp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lisp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lisp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lisp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lisp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lisp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hand13" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lisp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lisp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lisp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lisp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lisp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lisp" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -275,7 +239,7 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/src/test/java/com/hand13/Test.java&#10;D:/workspace/lisp/src/main/resources/lib.ss" />
     <property name="android.sdk.path" value="E:/asdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571706303815" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571706489974" />
     <property name="last_opened_file_path" value="E:/ssmaster" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -377,7 +341,7 @@
       <workItem from="1571625518043" duration="5788000" />
       <workItem from="1571638534953" duration="413000" />
       <workItem from="1571640518284" duration="197000" />
-      <workItem from="1571705252993" duration="1013000" />
+      <workItem from="1571705252993" duration="1398000" />
     </task>
     <task id="LOCAL-00001" summary="add ignore">
       <created>1571195570096</created>
@@ -449,17 +413,24 @@
       <option name="project" value="LOCAL" />
       <updated>1571638964405</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix bug">
+      <created>1571706465714</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1571706465714</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37298000" />
+    <option name="totallyTimeSpent" value="37683000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="54" y="109" width="1296" height="766" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18229954" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19498383" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -469,7 +440,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.22929937" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.28616852" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.15875614" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -613,19 +584,8 @@
     <MESSAGE value="add bool and character" />
     <MESSAGE value="add if /begin" />
     <MESSAGE value="more" />
-    <option name="LAST_COMMIT_MESSAGE" value="more" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hand13/List.java</url>
-          <line>28</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/String.java">
@@ -802,16 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/ListParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="119" column="36" selection-start-line="119" selection-start-column="36" selection-end-line="119" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -819,23 +769,6 @@
         </state>
       </provider>
       <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/LispBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="248" column="23" selection-start-line="248" selection-start-column="23" selection-end-line="248" selection-end-column="23" />
-          <folding>
-            <element signature="e#2148#2149#0" expanded="true" />
-            <element signature="e#2192#2193#0" expanded="true" />
-            <element signature="method#isDefine#0;class#LispBase#0" />
-            <element signature="e#5763#5917#0" expanded="true" />
-            <element signature="e#5916#5917#0" expanded="true" />
-            <element signature="e#7428#7528#0" expanded="true" />
-            <element signature="e#7428#7528#0" expanded="true" />
-            <element signature="e#7587#7599#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/Lisp.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -848,10 +781,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/ListParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1261">
+          <caret line="120" column="12" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/main.ss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/List.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="220">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
           <folding>
             <element signature="e#573#617#1" expanded="true" />
             <element signature="e#593#616#0" expanded="true" />
@@ -870,10 +820,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/main.ss">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/LispBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        <state relative-caret-position="119">
+          <caret line="176" column="27" lean-forward="true" selection-start-line="176" selection-start-column="27" selection-end-line="176" selection-end-column="27" />
+          <folding>
+            <element signature="e#2148#2149#0" expanded="true" />
+            <element signature="e#2192#2193#0" expanded="true" />
+            <element signature="method#isDefine#0;class#LispBase#0" />
+            <element signature="e#5226#5477#0" expanded="true" />
+            <element signature="e#5476#5477#0" expanded="true" />
+            <element signature="e#5763#5917#0" expanded="true" />
+            <element signature="e#5916#5917#0" expanded="true" />
+            <element signature="e#7611#7711#0" expanded="true" />
+            <element signature="e#7611#7711#0" expanded="true" />
+            <element signature="e#7587#7599#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="140">
+            <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
