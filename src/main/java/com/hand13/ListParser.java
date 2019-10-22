@@ -24,7 +24,7 @@ public class ListParser {
             throw new RuntimeException("error parse");
         }
         if (token.equals(")")) {
-            return new List(null, null);
+            return null;
         }
         ts.back();
         List header = new List(getNextObject(), null);

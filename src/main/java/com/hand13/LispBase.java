@@ -177,10 +177,14 @@ public class LispBase {
         env.put("display", new PrimitiveProcedure() {
             @Override
             public Object apply(List args) {
-                if(args.fst != null) {
-                    System.out.print(args.fst);
-                }
+                System.out.print(show(args.fst));
                 return null;
+            }
+        });
+        env.put("show", new PrimitiveProcedure() {
+            @Override
+            public Object apply(List args) {
+                return show(args.fst);
             }
         });
         env.put("eval", new PrimitiveProcedure() {
@@ -192,7 +196,7 @@ public class LispBase {
         env.put("null?", new PrimitiveProcedure() {
             @Override
             public Object apply(List args) {
-                return args == null || (args.fst == null && args.snd == null);
+                return args == null;
             }
         });
         env.put(">", new PrimitiveProcedure() {
@@ -243,5 +247,12 @@ public class LispBase {
                 return result;
             }
         });
+    }
+    public static String show(Object o) {
+        if( o != null) {
+            return o.toString();
+        }else {
+            return "()";
+        }
     }
 }

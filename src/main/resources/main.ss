@@ -1,2 +1,3 @@
-(begin (display "hello") (display "world"))
-(display "the end")
+(display '())
+(display (cons '() '()))
+(display (cons 'a (cons 'd '())))

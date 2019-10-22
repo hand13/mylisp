@@ -26,7 +26,12 @@ public class List implements Iterable<Object>{
 
     @Override
     public String toString() {
-        return "( " + fst + " " + snd +")";
+        StringBuilder str = new StringBuilder("( ");
+        for(Object o : this) {
+            str.append(LispBase.show(o)).append(" ");
+        }
+        str.append(")");
+        return str.toString();
     }
 
     @Override
@@ -45,7 +50,7 @@ public class List implements Iterable<Object>{
 
         @Override
         public boolean hasNext() {
-            return currentNode != null && currentNode.fst != null;
+            return currentNode != null;
         }
 
         @Override
