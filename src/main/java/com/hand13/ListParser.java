@@ -7,7 +7,7 @@ import static com.hand13.Token.*;
 public class ListParser {
     private TokenStream ts;
     private final String[] inners = {
-            "lambda", "define","if","begin"
+            "lambda", "define","if","begin","let"
     };
 
     public ListParser(InputStream in) {
@@ -90,6 +90,8 @@ public class ListParser {
                 return IF;
             case "begin":
                 return BEGIN;
+            case "let":
+                return LET;
             default:
                 return null;
         }

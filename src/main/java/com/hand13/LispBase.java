@@ -32,6 +32,8 @@ public class LispBase {
         }else if(isBegin(value)) {
 
             return begin(value,env);
+        }else if(isLet(value)) {
+            return let(value,env);
         }
         return null;
     }
@@ -51,6 +53,12 @@ public class LispBase {
 
             return eval(no,env);
         }
+    }
+    public static Object let(Object value,Env env) {
+        List stat = (List)value;
+        List varLet = (List)cdar(stat);
+        List expr = (List)cddr(stat);
+        return null;
     }
     public static Object begin(Object value,Env env) {
         List exps = (List)(cdr((List)value));
@@ -103,28 +111,27 @@ public class LispBase {
     }
 
     public static boolean isInner(Object value) {
-        return isLambda(value) || isDefine(value) || isBegin(value) || isIf(value);
+        return isLambda(value) || isDefine(value) || isBegin(value) || isIf(value) ||isLet(value);
+    }
+    public static boolean fstToken(Object value,Token token) {
+        if(value instanceof List) {
+            Object first = ((List) value).fst;
+            return first == token;
+        }
+        return false;
+
     }
     public static  boolean isLambda(Object value) {
-        if(value instanceof List) {
-            Object first = ((List) value).fst;
-            return first == LAMBDA;
-        }
-        return false;
+        return fstToken(value,LAMBDA);
     }
     public static boolean isIf(Object value) {
-        if(value instanceof List) {
-            Object first = ((List) value).fst;
-            return first == IF;
-        }
-        return false;
+        return fstToken(value,IF);
+    }
+    public static boolean isLet(Object value) {
+        return fstToken(value,LET);
     }
     public static boolean isBegin(Object value) {
-        if(value instanceof List) {
-            Object first = ((List) value).fst;
-            return first == BEGIN;
-        }
-        return false;
+        return fstToken(value,BEGIN);
     }
     public static boolean isSymbol(Object value){
         return value instanceof Symbol;

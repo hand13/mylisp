@@ -5,5 +5,6 @@ public enum Token {
     DEFINE,
     BEGIN,
     IF,
-    DEFINE_SYNTAX
+    DEFINE_SYNTAX,
+    LET
 }
