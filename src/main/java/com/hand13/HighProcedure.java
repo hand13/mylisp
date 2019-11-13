@@ -17,6 +17,7 @@ public class HighProcedure implements Procedure {
         }
         this.env =env;
         List a = (List)LispBase.cdar(lambda);
+        //lambda 体转换为begin结构
         this.exp = (List)LispBase.cddr(lambda);
         this.exp = new List(BEGIN,this.exp);
         if(a != null) {

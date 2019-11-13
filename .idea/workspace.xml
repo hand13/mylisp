@@ -300,7 +300,7 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/src/test/java/com/hand13/Test.java&#10;D:/workspace/lisp/src/main/resources/lib.ss" />
     <property name="android.sdk.path" value="E:/asdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573614508845" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573614694095" />
     <property name="last_opened_file_path" value="E:/ssmaster" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />

@@ -58,6 +58,7 @@ public class LispBase {
         List stat = (List)value;
         List varLet = (List)cdar(stat);
         List expr = (List)cddr(stat);
+        //转换为lambda + param求值
         return null;
     }
     public static Object begin(Object value,Env env) {
