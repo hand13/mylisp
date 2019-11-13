@@ -3,6 +3,7 @@ package com.hand13;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.hand13.Token.BEGIN;
 import static com.hand13.Token.LAMBDA;
 
 public class HighProcedure implements Procedure {
@@ -16,7 +17,8 @@ public class HighProcedure implements Procedure {
         }
         this.env =env;
         List a = (List)LispBase.cdar(lambda);
-        this.exp = (List)LispBase.cddar(lambda);
+        this.exp = (List)LispBase.cddr(lambda);
+        this.exp = new List(BEGIN,this.exp);
         if(a != null) {
             argList = new String[a.length()];
             List t = a;
