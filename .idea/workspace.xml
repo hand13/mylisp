@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="745d4fcc-e251-4047-8230-7823b44fbc2f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hand13/HighProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand13/HighProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hand13/Env.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand13/Env.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hand13/Lisp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand13/Lisp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hand13/LispBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand13/LispBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hand13/ListParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand13/ListParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib.ss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib.ss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/main.ss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main.ss" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,185 +39,6 @@
     <SUITE FILE_PATH="coverage/lisp$ListParser.ic" NAME="ListParser Coverage Results" MODIFIED="1571208015180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.hand13.*</FILTER>
     </SUITE>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/HighProcedure.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#325#417#0" expanded="true" />
-                <element signature="e#325#417#0" expanded="true" />
-                <element signature="e#325#417#0" expanded="true" />
-                <element signature="e#325#417#0" expanded="true" />
-                <element signature="e#325#417#0" expanded="true" />
-                <element signature="e#420#447#0" expanded="true" />
-                <element signature="e#468#496#0" expanded="true" />
-                <element signature="e#1464#1465#0" expanded="true" />
-                <element signature="e#1505#1506#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/Lisp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/main.ss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/LispUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/List.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1040">
-              <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
-              <folding>
-                <element signature="e#753#767#0" expanded="true" />
-                <element signature="e#1190#1191#0" expanded="true" />
-                <element signature="e#1240#1241#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/ListParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/Symbol.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-              <folding>
-                <element signature="e#100#101#0" expanded="true" />
-                <element signature="e#134#135#0" expanded="true" />
-                <element signature="e#180#181#0" expanded="true" />
-                <element signature="e#208#209#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/PrimitiveProcedure.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-              <folding>
-                <element signature="e#179#180#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/QuotedObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="e#192#193#0" expanded="true" />
-                <element signature="e#243#244#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/LispBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="150" column="25" selection-start-line="150" selection-start-column="25" selection-end-line="150" selection-end-column="25" />
-              <folding>
-                <element signature="e#826#889#0" expanded="true" />
-                <element signature="e#826#889#0" expanded="true" />
-                <element signature="e#983#1007#1" expanded="true" />
-                <element signature="e#1061#1104#1" expanded="true" />
-                <element signature="e#1181#1264#0" expanded="true" />
-                <element signature="e#1181#1264#0" expanded="true" />
-                <element signature="e#1181#1264#0" expanded="true" />
-                <element signature="e#1181#1264#0" expanded="true" />
-                <element signature="e#1181#1264#0" expanded="true" />
-                <element signature="e#1442#1466#1" expanded="true" />
-                <element signature="e#1454#1465#0" expanded="true" />
-                <element signature="e#1475#1500#1" expanded="true" />
-                <element signature="e#1489#1505#0" expanded="true" />
-                <element signature="e#1515#1538#1" expanded="true" />
-                <element signature="e#1527#1543#0" expanded="true" />
-                <element signature="e#1376#1413#1" expanded="true" />
-                <element signature="e#1681#1766#0" expanded="true" />
-                <element signature="e#1681#1766#0" expanded="true" />
-                <element signature="e#1681#1766#0" expanded="true" />
-                <element signature="e#1681#1766#0" expanded="true" />
-                <element signature="e#1681#1766#0" expanded="true" />
-                <element signature="e#1516#1532#1" expanded="true" />
-                <element signature="e#1541#1562#1" expanded="true" />
-                <element signature="e#1651#1665#0" expanded="true" />
-                <element signature="e#1768#1791#1" expanded="true" />
-                <element signature="e#1800#1837#1" expanded="true" />
-                <element signature="e#1846#1884#1" expanded="true" />
-                <element signature="e#1893#1922#1" expanded="true" />
-                <element signature="e#2148#2149#0" expanded="true" />
-                <element signature="e#2192#2193#0" expanded="true" />
-                <element signature="e#3337#3456#0" expanded="true" />
-                <element signature="e#3337#3456#0" expanded="true" />
-                <element signature="e#3104#3138#1" expanded="true" />
-                <element signature="e#3119#3133#0" expanded="true" />
-                <element signature="e#3119#3133#0" expanded="true" />
-                <element signature="e#3270#3271#0" expanded="true" />
-                <element signature="e#3315#3316#0" expanded="true" />
-                <element signature="e#3362#3363#0" expanded="true" />
-                <element signature="e#3403#3404#0" expanded="true" />
-                <element signature="e#3451#3452#0" expanded="true" />
-                <element signature="e#3493#3494#0" expanded="true" />
-                <element signature="e#3543#3544#0" expanded="true" />
-                <element signature="e#3587#3588#0" expanded="true" />
-                <element signature="e#4112#4113#0" expanded="true" />
-                <element signature="e#4159#4160#0" expanded="true" />
-                <element signature="e#5469#5628#0" expanded="true" />
-                <element signature="e#5627#5628#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -208,94 +50,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/hand13/Procedure.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hand13/Symbol.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hand13/QuotedList.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/hand13/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hand13/QuotedObject.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/resources/lib.ss" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hand13/PrimitiveProcedure.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hand13/LispUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hand13/TokenStream.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hand13/Env.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hand13/Lisp.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hand13/List.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hand13/Record.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hand13/Token.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hand13/ListParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hand13/LispBase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hand13/HighProcedure.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/main.ss" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="81" />
-    <option name="width" value="1296" />
-    <option name="height" value="766" />
-  </component>
+  <component name="ProjectId" id="1bcGw6H5ncM4f3fCwStR8g8ivHQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="lisp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lisp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lisp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lisp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lisp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lisp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lisp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lisp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lisp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lisp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hand13" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lisp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lisp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/src/test/java/com/hand13/Test.java&#10;D:/workspace/lisp/src/main/resources/lib.ss" />
     <property name="android.sdk.path" value="E:/asdk" />
@@ -317,45 +79,7 @@
     <option name="AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="AUTOSCROLL_FROM_SOURCE" value="false" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Application.Lisp">
-    <configuration name="Lisp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.hand13.Lisp" />
-      <module name="lisp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hand13.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.hand13.Test" />
-      <module name="lisp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hand13.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
       <setting name="replType" value="NREPL" />
       <setting name="execution" value="LEININGEN" />
@@ -373,6 +97,32 @@
       <setting name="replType" value="0" />
       <module name="" />
       <method v="2" />
+    </configuration>
+    <configuration name="Lisp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hand13.Lisp" />
+      <module name="mylisp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hand13.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hand13.Test" />
+      <module name="mylisp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hand13.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
@@ -521,96 +271,6 @@
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="43043000" />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20196672" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.22929937" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.098569155" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Script Monkey" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Tool Output" order="12" />
-      <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.33068362" />
-      <window_info anchor="bottom" id="ANTLR Preview" order="15" />
-      <window_info anchor="bottom" id="Messages" order="16" weight="0.30254778" />
-      <window_info anchor="bottom" id="LuaCheck" order="17" />
-      <window_info anchor="bottom" id="Regex Tester" order="18" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="PsiViewer" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Translate" order="8" />
-      <window_info anchor="right" id="SciView" order="9" />
-      <window_info anchor="right" id="Leiningen" order="10" />
-      <window_info anchor="right" id="Palette&#9;" order="11" />
-      <window_info anchor="right" id="Theme Preview" order="12" />
-      <window_info anchor="right" id="REPL" order="13" side_tool="true" />
-      <window_info anchor="right" id="Coverage" order="14" side_tool="true" weight="0.3527508" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20954692" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3089172" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.27503973" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Script Monkey" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Tool Output" order="12" />
-      <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.618442" />
-      <window_info anchor="bottom" id="ANTLR Preview" order="15" />
-      <window_info anchor="bottom" id="Messages" order="16" weight="0.08280255" />
-      <window_info anchor="bottom" id="LuaCheck" order="17" />
-      <window_info anchor="bottom" id="Regex Tester" order="18" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="PsiViewer" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Translate" order="8" />
-      <window_info anchor="right" id="SciView" order="9" />
-      <window_info anchor="right" id="Leiningen" order="10" />
-      <window_info anchor="right" id="Palette&#9;" order="11" />
-      <window_info anchor="right" id="Theme Preview" order="12" />
-      <window_info anchor="right" id="REPL" order="13" side_tool="true" />
-      <window_info anchor="right" id="Coverage" order="14" side_tool="true" weight="0.3527508" />
-    </layout-to-restore>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -623,12 +283,6 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -639,14 +293,6 @@
                     </value>
                   </entry>
                 </map>
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
               </option>
             </State>
           </value>
@@ -668,6 +314,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add ignore" />
@@ -684,309 +331,39 @@
     <MESSAGE value="rest recurse" />
     <option name="LAST_COMMIT_MESSAGE" value="rest recurse" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="1405" column="18" selection-start-line="1405" selection-start-column="18" selection-end-line="1405" selection-end-column="18" />
-          <folding>
-            <element signature="e#55800#55801#0" expanded="true" />
-            <element signature="e#55844#55845#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Double.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/Reader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="115" column="5" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/hand13/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#232#268#1" expanded="true" />
-            <element signature="e#234#268#1" expanded="true" />
-            <element signature="e#245#267#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/Arrays.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="2351" column="22" selection-start-line="2351" selection-start-column="22" selection-end-line="2351" selection-end-column="22" />
-          <folding>
-            <element signature="e#111724#111725#0" expanded="true" />
-            <element signature="e#111781#111782#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/Procedure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/math/BigDecimal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="130" selection-start-line="130" selection-end-line="130" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/Number.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1600">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/TokenStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#411#422#1" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
-            <element signature="e#720#721#0" expanded="true" />
-            <element signature="e#793#880#0" expanded="true" />
-            <element signature="e#793#880#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/lib.ss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lisp.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="80">
-            <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/Record.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/Token.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/Env.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#160#161#0" expanded="true" />
-            <element signature="e#197#198#0" expanded="true" />
-            <element signature="e#600#686#0" expanded="true" />
-            <element signature="e#600#686#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/LispUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1040">
-          <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
-          <folding>
-            <element signature="e#753#767#0" expanded="true" />
-            <element signature="e#1190#1191#0" expanded="true" />
-            <element signature="e#1240#1241#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/ListParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/Symbol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-          <folding>
-            <element signature="e#100#101#0" expanded="true" />
-            <element signature="e#134#135#0" expanded="true" />
-            <element signature="e#180#181#0" expanded="true" />
-            <element signature="e#208#209#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/PrimitiveProcedure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding>
-            <element signature="e#179#180#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/LispBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="150" column="25" selection-start-line="150" selection-start-column="25" selection-end-line="150" selection-end-column="25" />
-          <folding>
-            <element signature="e#826#889#0" expanded="true" />
-            <element signature="e#826#889#0" expanded="true" />
-            <element signature="e#983#1007#1" expanded="true" />
-            <element signature="e#1061#1104#1" expanded="true" />
-            <element signature="e#1181#1264#0" expanded="true" />
-            <element signature="e#1181#1264#0" expanded="true" />
-            <element signature="e#1181#1264#0" expanded="true" />
-            <element signature="e#1181#1264#0" expanded="true" />
-            <element signature="e#1181#1264#0" expanded="true" />
-            <element signature="e#1442#1466#1" expanded="true" />
-            <element signature="e#1454#1465#0" expanded="true" />
-            <element signature="e#1475#1500#1" expanded="true" />
-            <element signature="e#1489#1505#0" expanded="true" />
-            <element signature="e#1515#1538#1" expanded="true" />
-            <element signature="e#1527#1543#0" expanded="true" />
-            <element signature="e#1376#1413#1" expanded="true" />
-            <element signature="e#1681#1766#0" expanded="true" />
-            <element signature="e#1681#1766#0" expanded="true" />
-            <element signature="e#1681#1766#0" expanded="true" />
-            <element signature="e#1681#1766#0" expanded="true" />
-            <element signature="e#1681#1766#0" expanded="true" />
-            <element signature="e#1516#1532#1" expanded="true" />
-            <element signature="e#1541#1562#1" expanded="true" />
-            <element signature="e#1651#1665#0" expanded="true" />
-            <element signature="e#1768#1791#1" expanded="true" />
-            <element signature="e#1800#1837#1" expanded="true" />
-            <element signature="e#1846#1884#1" expanded="true" />
-            <element signature="e#1893#1922#1" expanded="true" />
-            <element signature="e#2148#2149#0" expanded="true" />
-            <element signature="e#2192#2193#0" expanded="true" />
-            <element signature="e#3337#3456#0" expanded="true" />
-            <element signature="e#3337#3456#0" expanded="true" />
-            <element signature="e#3104#3138#1" expanded="true" />
-            <element signature="e#3119#3133#0" expanded="true" />
-            <element signature="e#3119#3133#0" expanded="true" />
-            <element signature="e#3270#3271#0" expanded="true" />
-            <element signature="e#3315#3316#0" expanded="true" />
-            <element signature="e#3362#3363#0" expanded="true" />
-            <element signature="e#3403#3404#0" expanded="true" />
-            <element signature="e#3451#3452#0" expanded="true" />
-            <element signature="e#3493#3494#0" expanded="true" />
-            <element signature="e#3543#3544#0" expanded="true" />
-            <element signature="e#3587#3588#0" expanded="true" />
-            <element signature="e#4112#4113#0" expanded="true" />
-            <element signature="e#4159#4160#0" expanded="true" />
-            <element signature="e#5469#5628#0" expanded="true" />
-            <element signature="e#5627#5628#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/QuotedObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#192#193#0" expanded="true" />
-            <element signature="e#243#244#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/HighProcedure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#325#417#0" expanded="true" />
-            <element signature="e#325#417#0" expanded="true" />
-            <element signature="e#325#417#0" expanded="true" />
-            <element signature="e#325#417#0" expanded="true" />
-            <element signature="e#325#417#0" expanded="true" />
-            <element signature="e#420#447#0" expanded="true" />
-            <element signature="e#468#496#0" expanded="true" />
-            <element signature="e#1464#1465#0" expanded="true" />
-            <element signature="e#1505#1506#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hand13/Lisp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/main.ss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state x="352" y="0" width="675" height="768" key="#Lisp" timestamp="1588925780571">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="352" y="0" width="675" height="768" key="#Lisp/0.0.1366.768@0.0.1366.768" timestamp="1588925780571" />
+    <state x="352" y="0" width="675" height="768" key="#Test" timestamp="1588925699036">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="352" y="0" width="675" height="768" key="#Test/0.0.1366.768@0.0.1366.768" timestamp="1588925699036" />
+    <state x="137" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588924683485">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="137" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1588924683485" />
+    <state width="1323" height="95" key="GridCell.Tab.0.bottom" timestamp="1588926040126">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="95" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1588926040126" />
+    <state width="1323" height="95" key="GridCell.Tab.0.center" timestamp="1588926040126">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="95" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1588926040126" />
+    <state width="1323" height="95" key="GridCell.Tab.0.left" timestamp="1588926040126">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="95" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1588926040126" />
+    <state width="1323" height="95" key="GridCell.Tab.0.right" timestamp="1588926040126">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="95" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1588926040126" />
+    <state x="385" y="118" width="596" height="532" key="find.popup" timestamp="1588925668722">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="385" y="118" width="596" height="532" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1588925668722" />
   </component>
   <component name="masterDetails">
     <states>

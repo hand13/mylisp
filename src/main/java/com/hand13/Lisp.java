@@ -9,6 +9,7 @@ public class Lisp {
     private boolean inited;
     public void init() {
         LispBase.initEnv(env);
+        LispBase.loadLibrary(env,"lib.ss");
         inited = true;
     }
     public void loadLibrary(String filepath){

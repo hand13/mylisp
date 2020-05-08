@@ -1,6 +1,7 @@
 package com.hand13;
 
 import java.io.InputStream;
+import java.math.BigDecimal;
 
 import static com.hand13.Token.*;
 
@@ -57,10 +58,12 @@ public class ListParser {
         if (token == null || token.equals(")")) {
             return null;
         }
+        //列表
         if (token.equals("(")) {
             ts.back();
             return getNextList();
         }
+        //引用
         if (token.equals("'")) {
             return new QuotedObject(getNextObject());
         }
@@ -68,12 +71,15 @@ public class ListParser {
         if (token.startsWith("\"")) {
             return token.substring(1, token.length() - 1);
         }
+        //数字
         if (Character.isDigit(token.charAt(0))) {
-            return Double.valueOf(token);
+            return new BigDecimal(token);
         }
+        //特殊token
         if (isInner(token)) {
             return string2Token(token);
         }
+        //字符字面量
         if (token.startsWith("#")) {
             return string2SpecialValue(token);
         }

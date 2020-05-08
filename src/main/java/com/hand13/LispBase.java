@@ -1,103 +1,110 @@
 package com.hand13;
 
+import java.math.BigDecimal;
+
 import static com.hand13.Token.*;
 
 public class LispBase {
-    public static Object eval(Object value,Env env) {
-        if(isExp(value)) {
-            List o = evalEach((List)value,env);
-            return apply((Procedure)o.fst,(List)o.snd);
+    public static Object eval(Object value, Env env) {
+        if (isExp(value)) {
+            List o = evalEach((List) value, env);
+            return apply((Procedure) o.fst, (List) o.snd);
 
-        }else if(isSymbol(value)){
-            return env.getValue(((Symbol)value).value);
+        } else if (isSymbol(value)) {
+            return env.getValue(((Symbol) value).value);
 
-        }else if(isPrimitive(value)) {
+        } else if (isPrimitive(value)) {
             return value;
 
-        }else if(isLambda(value)) {
-            return new HighProcedure((List)value,env);
+        } else if (isLambda(value)) {
+            return new HighProcedure((List) value, env);
 
-        }else if(isQuoted(value)) {
+        } else if (isQuoted(value)) {
 
-            return ((QuotedObject)value).value;
+            return ((QuotedObject) value).value;
 
-        }else if(isDefine(value)) {
+        } else if (isDefine(value)) {
 
-            define(value,env);
+            define(value, env);
 
-        }else if(isIf(value)) {
+        } else if (isIf(value)) {
 
-            return IF(value,env);
+            return IF(value, env);
 
-        }else if(isBegin(value)) {
+        } else if (isBegin(value)) {
 
-            return begin(value,env);
-        }else if(isLet(value)) {
-            return let(value,env);
+            return begin(value, env);
+        } else if (isLet(value)) {
+            return let(value, env);
         }
         return null;
     }
 
-    public static Object IF(Object value,Env env){
-        List exp = (List)value;
-        List predicate = (List)cdar(exp);
+    public static Object IF(Object value, Env env) {
+        List exp = (List) value;
+        List predicate = (List) cdar(exp);
         Object yes = cddar(exp);
-        Object no = (cddar((List)cdr(exp)));
-        Boolean p = (Boolean)(eval(predicate,env));
-        if(p == null) {
+        Object no = (cddar((List) cdr(exp)));
+        Boolean p = (Boolean) (eval(predicate, env));
+        if (p == null) {
             throw new RuntimeException("if null occurs");
         }
-        if(p) {
-            return eval(yes,env);
-        }else {
+        if (p) {
+            return eval(yes, env);
+        } else {
 
-            return eval(no,env);
+            return eval(no, env);
         }
     }
-    public static Object let(Object value,Env env) {
-        List stat = (List)value;
-        List varLet = (List)cdar(stat);
-        List expr = (List)cddr(stat);
+
+    public static Object let(Object value, Env env) {
+        List stat = (List) value;
+        List varLet = (List) cdar(stat);
+        List expr = (List) cddr(stat);
         //转换为lambda + param求值
         return null;
     }
-    public static Object begin(Object value,Env env) {
-        List exps = (List)(cdr((List)value));
-        if(exps == null) {
+
+    public static Object begin(Object value, Env env) {
+        List exps = (List) (cdr((List) value));
+        if (exps == null) {
             throw new RuntimeException("begin is null");
         }
         List tmp = exps;
         Object result = null;
-        while(tmp != null) {
-            result = eval(car(tmp),env);
-            tmp = (List)cdr(tmp);
+        while (tmp != null) {
+            result = eval(car(tmp), env);
+            tmp = (List) cdr(tmp);
         }
         return result;
     }
-    public static void define(Object value,Env env) {
-        List def = (List)value;
-        Symbol varSymbol = (Symbol)cdar(def);
-        Object exp = (car((List)(cddr(def))));
+
+    public static void define(Object value, Env env) {
+        List def = (List) value;
+        Symbol varSymbol = (Symbol) cdar(def);
+        Object exp = (car((List) (cddr(def))));
         String var = varSymbol.value;
         /*
         if(env.getValue(var) != null) {
             throw new RuntimeException("re definition");
         }*/
-        env.put(var,eval(exp,env));
+        env.put(var, eval(exp, env));
     }
 
-    public static Object apply(Procedure procedure,List args) {
+    public static Object apply(Procedure procedure, List args) {
         return procedure.apply(args);
     }
-    public static List evalEach(List value,Env env) {
+
+    public static List evalEach(List value, Env env) {
         List result = null;
-        if(value != null) {
-            result = new List(eval(value.fst,env),evalEach((List)value.snd,env));
+        if (value != null) {
+            result = new List(eval(value.fst, env), evalEach((List) value.snd, env));
         }
         return result;
     }
+
     public static boolean isDefine(Object value) {
-        if(value instanceof List) {
+        if (value instanceof List) {
             Object first = ((List) value).fst;
             return first == DEFINE;
         }
@@ -107,79 +114,108 @@ public class LispBase {
     public static boolean isQuoted(Object value) {
         return value instanceof QuotedObject;
     }
+
     public static boolean isExp(Object value) {
-        return value instanceof List && (! isInner(value));
+        return value instanceof List && (!isInner(value));
     }
 
     public static boolean isInner(Object value) {
-        return isLambda(value) || isDefine(value) || isBegin(value) || isIf(value) ||isLet(value);
+        return isLambda(value) || isDefine(value) || isBegin(value) || isIf(value) || isLet(value);
     }
-    public static boolean fstToken(Object value,Token token) {
-        if(value instanceof List) {
+
+    public static boolean fstToken(Object value, Token token) {
+        if (value instanceof List) {
             Object first = ((List) value).fst;
             return first == token;
         }
         return false;
 
     }
-    public static  boolean isLambda(Object value) {
-        return fstToken(value,LAMBDA);
+
+    public static boolean isLambda(Object value) {
+        return fstToken(value, LAMBDA);
     }
+
     public static boolean isIf(Object value) {
-        return fstToken(value,IF);
+        return fstToken(value, IF);
     }
+
     public static boolean isLet(Object value) {
-        return fstToken(value,LET);
+        return fstToken(value, LET);
     }
+
     public static boolean isBegin(Object value) {
-        return fstToken(value,BEGIN);
+        return fstToken(value, BEGIN);
     }
-    public static boolean isSymbol(Object value){
+
+    public static boolean isSymbol(Object value) {
         return value instanceof Symbol;
     }
+
     public static boolean isPrimitive(Object value) {
         return value instanceof String || value instanceof Number;
     }
+
     public static Object car(List value) {
         return value.fst;
     }
+
     public static Object cdr(List value) {
         return value.snd;
     }
-    public static Object cdar(List value){
-        return ((List)(cdr(value))).fst;
+
+    public static Object cdar(List value) {
+        return ((List) (cdr(value))).fst;
     }
+
     public static Object cddr(List value) {
-        return ((List)(cdr(value))).snd;
+        return ((List) (cdr(value))).snd;
     }
+
     public static Object cddar(List value) {
-        return ((List)cddr(value)).fst;
+        return ((List) cddr(value)).fst;
     }
+
     public static void initEnv(final Env env) {
         env.put("+", new Procedure() {
             public Object apply(List args) {
-                double m = 0;
+                BigDecimal m = BigDecimal.ZERO;
                 List tmp = args;
-                while(tmp != null) {
-                    m += ((Number)(LispBase.car(tmp))).doubleValue();
-                    tmp = (List)tmp.snd;
+                while (tmp != null) {
+                    m = m.add((BigDecimal) car(tmp));
+                    tmp = (List) tmp.snd;
+                }
+                return m;
+            }
+
+        });
+
+        env.put("-", new PrimitiveProcedure() {
+            @Override
+            public Object apply(List args) {
+                BigDecimal m = (BigDecimal) car(args);
+                List tmp = (List) cdr(args);
+                while (tmp != null) {
+                    m = m.subtract((BigDecimal) car(tmp));
+                    tmp = (List) tmp.snd;
                 }
                 return m;
             }
         });
+
         env.put("car", new PrimitiveProcedure() {
             public Object apply(List args) {
-                return LispBase.car((List)args.fst);
+                return car((List) args.fst);
             }
         });
         env.put("cdr", new PrimitiveProcedure() {
             public Object apply(List args) {
-                return LispBase.cdr((List)args.fst);
+                return cdr((List) args.fst);
             }
         });
         env.put("cons", new PrimitiveProcedure() {
             public Object apply(List args) {
-                return new List(args.fst,((List)args.snd).fst);
+                return new List(args.fst, ((List) args.snd).fst);
             }
         });
         env.put("display", new PrimitiveProcedure() {
@@ -198,7 +234,7 @@ public class LispBase {
         env.put("eval", new PrimitiveProcedure() {
             @Override
             public Object apply(List args) {
-                return eval((car(args)),env);
+                return eval((car(args)), env);
             }
         });
         env.put("null?", new PrimitiveProcedure() {
@@ -210,24 +246,24 @@ public class LispBase {
         env.put(">", new PrimitiveProcedure() {
             @Override
             public Object apply(List args) {
-                Double a1 = (Double)car(args);
-                Double a2 = (Double)cdar(args);
-                return a1 > a2;
+                BigDecimal a1 = (BigDecimal) car(args);
+                BigDecimal a2 = (BigDecimal) cdar(args);
+                return a1.compareTo(a2) > 0;
             }
         });
         env.put("<", new PrimitiveProcedure() {
             @Override
             public Object apply(List args) {
-                Double a1 = (Double)car(args);
-                Double a2 = (Double)cdar(args);
-                return a1 < a2;
+                BigDecimal a1 = (BigDecimal) car(args);
+                BigDecimal a2 = (BigDecimal) cdar(args);
+                return a1.compareTo(a2) < 0;
             }
         });
         env.put("=", new PrimitiveProcedure() {
             @Override
             public Object apply(List args) {
-                Double a1 = (Double)car(args);
-                Double a2 = (Double)cdar(args);
+                BigDecimal a1 = (BigDecimal) car(args);
+                BigDecimal a2 = (BigDecimal) cdar(args);
                 return a1.equals(a2);
             }
         });
@@ -235,9 +271,9 @@ public class LispBase {
             @Override
             public Object apply(List args) {
                 Boolean result = true;
-                for(Object o:args) {
-                    if(o != null) {
-                        result = result && (Boolean)o;
+                for (Object o : args) {
+                    if (o != null) {
+                        result = result && (Boolean) o;
                     }
                 }
                 return result;
@@ -247,27 +283,24 @@ public class LispBase {
             @Override
             public Object apply(List args) {
                 Boolean result = false;
-                for(Object o : args) {
-                    if( o != null) {
-                        result = result || (Boolean)o;
+                for (Object o : args) {
+                    if (o != null) {
+                        result = result || (Boolean) o;
                     }
                 }
                 return result;
             }
         });
-        env.put("-", new PrimitiveProcedure() {
-            @Override
-            public Object apply(List args) {
-                Double a1 = (Double)car(args);
-                Double a2 = (Double)cdar(args);
-                return a1 - a2;
-            }
-        });
     }
+
+    public static boolean loadLibrary(Env env,String path) {
+        return true;
+    }
+
     public static String show(Object o) {
-        if( o != null) {
+        if (o != null) {
             return o.toString();
-        }else {
+        } else {
             return "()";
         }
     }

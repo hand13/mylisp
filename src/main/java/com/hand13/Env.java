@@ -17,7 +17,7 @@ public class Env {
     public void put(String name,Object value) {
         this.env.put(name,value);
     }
-    public void registerProcudure(String name,Procedure procedure) {
+    public void registerProcedure(String name, Procedure procedure) {
         this.env.put(name,procedure);
     }
     public Object getValue(String symbol){
