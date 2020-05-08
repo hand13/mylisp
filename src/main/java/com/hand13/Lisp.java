@@ -6,17 +6,17 @@ import java.net.URL;
 
 public class Lisp {
     private Env env = new Env();
-    private boolean inited;
+    private boolean initialed;
     public void init() {
         LispBase.initEnv(env);
         LispBase.loadLibrary(env,"lib.ss");
-        inited = true;
+        initialed = true;
     }
     public void loadLibrary(String filepath){
 
     }
     public void doFile(String filepath)throws IOException {
-        if(!inited) {
+        if(!initialed) {
             throw new RuntimeException("not init base lib");
         }
         ListParser parser = new ListParser(new FileInputStream(filepath));
