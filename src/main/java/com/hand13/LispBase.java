@@ -218,7 +218,7 @@ public class LispBase {
             public Object onApply(List args) {
                 BigDecimal m = (BigDecimal) car(args);
                 List tmp = (List) cdr(args);
-                m = m.divide((BigDecimal) car(tmp),10,BigDecimal.ROUND_HALF_UP);
+                m = m.divide((BigDecimal) car(tmp), 10, BigDecimal.ROUND_HALF_UP);
                 return m;
             }
         });
@@ -270,7 +270,7 @@ public class LispBase {
         env.put("null?", new PrimitiveProcedure(1) {
             @Override
             public Object onApply(List args) {
-                return args == null;
+                return args == null || car(args) == null;
             }
         });
         env.put(">", new PrimitiveProcedure(2) {
@@ -302,8 +302,9 @@ public class LispBase {
             public Object onApply(List args) {
                 Boolean result = true;
                 for (Object o : args) {
-                    if (o != null) {
-                        result = result && (Boolean) o;
+                    if (!(Boolean) o) {
+                        result = false;
+                        break;
                     }
                 }
                 return result;
@@ -314,16 +315,30 @@ public class LispBase {
             public Object onApply(List args) {
                 Boolean result = false;
                 for (Object o : args) {
-                    if (o != null) {
-                        result = result || (Boolean) o;
+                    if ((Boolean) o) {
+                        result = true;
+                        break;
                     }
                 }
                 return result;
             }
         });
+        env.put("not", new PrimitiveProcedure(1) {
+            @Override
+            public Object onApply(List args) {
+                return !(Boolean) (car(args));
+            }
+        });
+        env.put("nullcar?", new PrimitiveProcedure(1) {
+            @Override
+            public Object onApply(List args) {
+                List m = (List) car(args);
+                return m == null || m.fst == null;
+            }
+        });
     }
 
-    public static boolean loadLibrary(Env env,String path) {
+    public static boolean loadLibrary(Env env, String path) {
         return true;
     }
 
