@@ -7,9 +7,10 @@ import static com.hand13.Token.BEGIN;
 import static com.hand13.Token.LAMBDA;
 
 public class HighProcedure implements Procedure {
-    public Env env;
-    public List exp;
-    public String[] argList;
+    private Env env;
+    private List exp;
+    private String[] argList;
+    private int paramNumbers;
 
     public HighProcedure(List lambda,Env env) {
         if(lambda.fst != LAMBDA) {
@@ -27,10 +28,25 @@ public class HighProcedure implements Procedure {
                 argList[i] = ((Symbol)t.fst).value;
                 t = (List)t.snd;
             }
+            paramNumbers = argList.length;
+        }else {
+            paramNumbers = 0;
         }
     }
+
+
+    @Override
+    public boolean checkParams(List args) {
+        if(paramNumbers != Procedure.INFINITE_PARAM_LENGTH) {
+            return paramNumbers == args.length();
+        }
+        return true;
+    }
+
     public Object apply(List args) {
-        this.putArgs(args);
+        if(!checkParams(args)) {
+            throw  new RuntimeException("wrong args numbers");
+        }
         Env tmp = new Env(this.putArgs(args),env);
         return LispBase.eval(exp,tmp);
     }

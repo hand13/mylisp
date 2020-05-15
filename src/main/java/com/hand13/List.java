@@ -16,7 +16,7 @@ public class List implements Iterable<Object>{
         int i = 0;
         while(a instanceof List) {
             i++;
-            a = this.snd;
+            a = ((List) a).snd;
         }
         if(a != null) {
             throw new RuntimeException("this is not a p list");

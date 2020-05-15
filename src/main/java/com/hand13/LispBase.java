@@ -177,8 +177,8 @@ public class LispBase {
     }
 
     public static void initEnv(final Env env) {
-        env.put("+", new Procedure() {
-            public Object apply(List args) {
+        env.put("+", new PrimitiveProcedure(Procedure.INFINITE_PARAM_LENGTH) {
+            public Object onApply(List args) {
                 BigDecimal m = BigDecimal.ZERO;
                 List tmp = args;
                 while (tmp != null) {
@@ -190,9 +190,9 @@ public class LispBase {
 
         });
 
-        env.put("-", new PrimitiveProcedure() {
+        env.put("-", new PrimitiveProcedure(Procedure.INFINITE_PARAM_LENGTH) {
             @Override
-            public Object apply(List args) {
+            public Object onApply(List args) {
                 BigDecimal m = (BigDecimal) car(args);
                 List tmp = (List) cdr(args);
                 while (tmp != null) {
@@ -204,92 +204,102 @@ public class LispBase {
         });
 
 
-        env.put("*", new PrimitiveProcedure() {
+        env.put("*", new PrimitiveProcedure(Procedure.INFINITE_PARAM_LENGTH) {
             @Override
-            public Object apply(List args) {
+            public Object onApply(List args) {
                 BigDecimal m = (BigDecimal) car(args);
                 List tmp = (List) cdr(args);
                 m = m.multiply((BigDecimal) car(tmp));
                 return m;
             }
         });
-        env.put("*", new PrimitiveProcedure() {
+        env.put("/", new PrimitiveProcedure(Procedure.INFINITE_PARAM_LENGTH) {
             @Override
-            public Object apply(List args) {
+            public Object onApply(List args) {
                 BigDecimal m = (BigDecimal) car(args);
                 List tmp = (List) cdr(args);
-                m = m.divide((BigDecimal) car(tmp));
+                m = m.divide((BigDecimal) car(tmp),10,BigDecimal.ROUND_HALF_UP);
                 return m;
             }
         });
 
-        env.put("car", new PrimitiveProcedure() {
-            public Object apply(List args) {
+        env.put("%", new PrimitiveProcedure(2) {
+            @Override
+            public Object onApply(List args) {
+                BigDecimal m = (BigDecimal) car(args);
+                List tmp = (List) cdr(args);
+                m = m.remainder((BigDecimal) car(tmp));
+                return m;
+            }
+        });
+
+        env.put("car", new PrimitiveProcedure(1) {
+            public Object onApply(List args) {
                 return car((List) args.fst);
             }
         });
-        env.put("cdr", new PrimitiveProcedure() {
-            public Object apply(List args) {
+        env.put("cdr", new PrimitiveProcedure(1) {
+            public Object onApply(List args) {
                 return cdr((List) args.fst);
             }
         });
-        env.put("cons", new PrimitiveProcedure() {
-            public Object apply(List args) {
+        env.put("cons", new PrimitiveProcedure(2) {
+            public Object onApply(List args) {
                 return new List(args.fst, ((List) args.snd).fst);
             }
         });
-        env.put("display", new PrimitiveProcedure() {
+        env.put("display", new PrimitiveProcedure(1) {
             @Override
-            public Object apply(List args) {
+            public Object onApply(List args) {
                 System.out.print(show(args.fst));
                 return null;
             }
         });
-        env.put("show", new PrimitiveProcedure() {
+        env.put("show", new PrimitiveProcedure(1) {
             @Override
-            public Object apply(List args) {
+            public Object onApply(List args) {
                 return show(args.fst);
             }
         });
-        env.put("eval", new PrimitiveProcedure() {
+        env.put("eval", new PrimitiveProcedure(1) {
             @Override
-            public Object apply(List args) {
+            public Object onApply(List args) {
                 return eval((car(args)), env);
             }
         });
-        env.put("null?", new PrimitiveProcedure() {
+        env.put("null?", new PrimitiveProcedure(1) {
             @Override
-            public Object apply(List args) {
+            public Object onApply(List args) {
                 return args == null;
             }
         });
-        env.put(">", new PrimitiveProcedure() {
+        env.put(">", new PrimitiveProcedure(2) {
             @Override
-            public Object apply(List args) {
+            public Object onApply(List args) {
                 BigDecimal a1 = (BigDecimal) car(args);
                 BigDecimal a2 = (BigDecimal) cdar(args);
                 return a1.compareTo(a2) > 0;
             }
         });
-        env.put("<", new PrimitiveProcedure() {
+        env.put("<", new PrimitiveProcedure(2) {
             @Override
-            public Object apply(List args) {
+            public Object onApply(List args) {
                 BigDecimal a1 = (BigDecimal) car(args);
                 BigDecimal a2 = (BigDecimal) cdar(args);
                 return a1.compareTo(a2) < 0;
             }
         });
-        env.put("=", new PrimitiveProcedure() {
+        env.put("=", new PrimitiveProcedure(2) {
             @Override
-            public Object apply(List args) {
+            public Object onApply(List args) {
                 BigDecimal a1 = (BigDecimal) car(args);
                 BigDecimal a2 = (BigDecimal) cdar(args);
                 return a1.equals(a2);
             }
         });
-        env.put("and", new PrimitiveProcedure() {
+        env.put("and", new PrimitiveProcedure(Procedure.INFINITE_PARAM_LENGTH) {
             @Override
-            public Object apply(List args) {
+            public Object onApply(List args) {
                 Boolean result = true;
                 for (Object o : args) {
                     if (o != null) {
@@ -299,9 +309,9 @@ public class LispBase {
                 return result;
             }
         });
-        env.put("or", new PrimitiveProcedure() {
+        env.put("or", new PrimitiveProcedure(Procedure.INFINITE_PARAM_LENGTH) {
             @Override
-            public Object apply(List args) {
+            public Object onApply(List args) {
                 Boolean result = false;
                 for (Object o : args) {
                     if (o != null) {
