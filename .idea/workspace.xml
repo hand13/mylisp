@@ -19,16 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="745d4fcc-e251-4047-8230-7823b44fbc2f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="745d4fcc-e251-4047-8230-7823b44fbc2f" name="Default Changelist" comment="more">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hand13/Env.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand13/Env.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hand13/Lisp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand13/Lisp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hand13/LispBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand13/LispBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hand13/ListParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand13/ListParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/lib.ss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib.ss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/main.ss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main.ss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +260,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573613964130</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="more test">
+      <created>1588926156805</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1588926156805</updated>
+    </task>
+    <task id="LOCAL-00017" summary="more">
+      <created>1588926208092</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1588926208092</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -325,11 +334,12 @@
     <MESSAGE value="add define" />
     <MESSAGE value="add bool and character" />
     <MESSAGE value="add if /begin" />
-    <MESSAGE value="more" />
     <MESSAGE value="fix bug" />
     <MESSAGE value="add readme" />
     <MESSAGE value="rest recurse" />
-    <option name="LAST_COMMIT_MESSAGE" value="rest recurse" />
+    <MESSAGE value="more test" />
+    <MESSAGE value="more" />
+    <option name="LAST_COMMIT_MESSAGE" value="more" />
   </component>
   <component name="WindowStateProjectService">
     <state x="352" y="0" width="675" height="768" key="#Lisp" timestamp="1588925780571">
@@ -344,26 +354,34 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="137" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1588924683485" />
-    <state width="1323" height="95" key="GridCell.Tab.0.bottom" timestamp="1588926040126">
+    <state width="1323" height="95" key="GridCell.Tab.0.bottom" timestamp="1588927741357">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="95" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1588926040126" />
-    <state width="1323" height="95" key="GridCell.Tab.0.center" timestamp="1588926040126">
+    <state width="1323" height="95" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1588927741357" />
+    <state width="1323" height="95" key="GridCell.Tab.0.center" timestamp="1588927741357">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="95" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1588926040126" />
-    <state width="1323" height="95" key="GridCell.Tab.0.left" timestamp="1588926040126">
+    <state width="1323" height="95" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1588927741357" />
+    <state width="1323" height="95" key="GridCell.Tab.0.left" timestamp="1588927741356">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="95" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1588926040126" />
-    <state width="1323" height="95" key="GridCell.Tab.0.right" timestamp="1588926040126">
+    <state width="1323" height="95" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1588927741356" />
+    <state width="1323" height="95" key="GridCell.Tab.0.right" timestamp="1588927741357">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1323" height="95" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1588926040126" />
+    <state width="1323" height="95" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1588927741357" />
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1588926221961">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1588926221961" />
     <state x="385" y="118" width="596" height="532" key="find.popup" timestamp="1588925668722">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="385" y="118" width="596" height="532" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1588925668722" />
+    <state x="57" y="0" key="new project wizard" timestamp="1589009616133">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="57" y="0" key="new project wizard/0.0.1366.768@0.0.1366.768" timestamp="1589009616133" />
   </component>
   <component name="masterDetails">
     <states>

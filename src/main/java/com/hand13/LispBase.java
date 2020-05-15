@@ -203,6 +203,26 @@ public class LispBase {
             }
         });
 
+
+        env.put("*", new PrimitiveProcedure() {
+            @Override
+            public Object apply(List args) {
+                BigDecimal m = (BigDecimal) car(args);
+                List tmp = (List) cdr(args);
+                m = m.multiply((BigDecimal) car(tmp));
+                return m;
+            }
+        });
+        env.put("*", new PrimitiveProcedure() {
+            @Override
+            public Object apply(List args) {
+                BigDecimal m = (BigDecimal) car(args);
+                List tmp = (List) cdr(args);
+                m = m.divide((BigDecimal) car(tmp));
+                return m;
+            }
+        });
+
         env.put("car", new PrimitiveProcedure() {
             public Object apply(List args) {
                 return car((List) args.fst);
