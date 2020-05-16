@@ -20,9 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="745d4fcc-e251-4047-8230-7823b44fbc2f" name="Default Changelist" comment="more">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hand13/SpecialValue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hand13/LispBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand13/LispBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hand13/LispUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand13/LispUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hand13/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand13/List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hand13/ListParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hand13/ListParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/main.ss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main.ss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hand13/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hand13/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +43,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -287,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589523172243</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="more">
+      <created>1589525854930</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1589525854930</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -371,50 +384,54 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="472" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1589521684453" />
-    <state x="455" y="172" key="#xdebugger.evaluate" timestamp="1589524742448">
+    <state x="455" y="172" key="#xdebugger.evaluate" timestamp="1589597892877">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="455" y="172" key="#xdebugger.evaluate/0.0.1366.768@0.0.1366.768" timestamp="1589524742448" />
-    <state width="1306" height="181" key="GridCell.Tab.0.bottom" timestamp="1589525293854">
+    <state x="455" y="172" key="#xdebugger.evaluate/0.0.1366.768@0.0.1366.768" timestamp="1589597892877" />
+    <state x="123" y="165" width="1166" height="495" key="DiffContextDialog" timestamp="1589596540402">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1306" height="181" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1589525293854" />
-    <state width="1306" height="181" key="GridCell.Tab.0.center" timestamp="1589525293854">
+    <state x="123" y="165" width="1166" height="495" key="DiffContextDialog/0.0.1366.768@0.0.1366.768" timestamp="1589596540402" />
+    <state width="1306" height="147" key="GridCell.Tab.0.bottom" timestamp="1589597895586">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1306" height="181" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1589525293854" />
-    <state width="1306" height="181" key="GridCell.Tab.0.left" timestamp="1589525293854">
+    <state width="1306" height="147" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1589597895586" />
+    <state width="1306" height="147" key="GridCell.Tab.0.center" timestamp="1589597895585">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1306" height="181" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1589525293854" />
-    <state width="1306" height="181" key="GridCell.Tab.0.right" timestamp="1589525293854">
+    <state width="1306" height="147" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1589597895585" />
+    <state width="1306" height="147" key="GridCell.Tab.0.left" timestamp="1589597895585">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1306" height="181" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1589525293854" />
-    <state width="1306" height="181" key="GridCell.Tab.1.bottom" timestamp="1589525294142">
+    <state width="1306" height="147" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1589597895585" />
+    <state width="1306" height="147" key="GridCell.Tab.0.right" timestamp="1589597895586">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1306" height="181" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1589525294142" />
-    <state width="1306" height="181" key="GridCell.Tab.1.center" timestamp="1589525294142">
+    <state width="1306" height="147" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1589597895586" />
+    <state width="1306" height="147" key="GridCell.Tab.1.bottom" timestamp="1589597895586">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1306" height="181" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1589525294142" />
-    <state width="1306" height="181" key="GridCell.Tab.1.left" timestamp="1589525294142">
+    <state width="1306" height="147" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1589597895586" />
+    <state width="1306" height="147" key="GridCell.Tab.1.center" timestamp="1589597895586">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1306" height="181" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1589525294142" />
-    <state width="1306" height="181" key="GridCell.Tab.1.right" timestamp="1589525294142">
+    <state width="1306" height="147" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1589597895586" />
+    <state width="1306" height="147" key="GridCell.Tab.1.left" timestamp="1589597895586">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1306" height="181" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1589525294142" />
+    <state width="1306" height="147" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1589597895586" />
+    <state width="1306" height="147" key="GridCell.Tab.1.right" timestamp="1589597895586">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1306" height="147" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1589597895586" />
     <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1588926221961">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1588926221961" />
-    <state x="385" y="118" width="596" height="532" key="find.popup" timestamp="1588925668722">
+    <state x="385" y="118" width="596" height="532" key="find.popup" timestamp="1589595186889">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="385" y="118" width="596" height="532" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1588925668722" />
+    <state x="385" y="118" width="596" height="532" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1589595186889" />
     <state x="57" y="0" key="new project wizard" timestamp="1589009616133">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import static com.hand13.Token.*;
 
+//lisp 求值中不得存在空指针
 public class LispBase {
     public static Object eval(Object value, Env env) {
         if (isExp(value)) {
@@ -37,7 +38,7 @@ public class LispBase {
         } else if (isLet(value)) {
             return let(value, env);
         }
-        return null;
+        return SpecialValue.VOID;
     }
 
     public static Object IF(Object value, Env env) {
@@ -46,9 +47,6 @@ public class LispBase {
         Object yes = cddar(exp);
         Object no = (cddar((List) cdr(exp)));
         Boolean p = (Boolean) (eval(predicate, env));
-        if (p == null) {
-            throw new RuntimeException("if null occurs");
-        }
         if (p) {
             return eval(yes, env);
         } else {
@@ -84,10 +82,6 @@ public class LispBase {
         Symbol varSymbol = (Symbol) cdar(def);
         Object exp = (car((List) (cddr(def))));
         String var = varSymbol.value;
-        /*
-        if(env.getValue(var) != null) {
-            throw new RuntimeException("re definition");
-        }*/
         env.put(var, eval(exp, env));
     }
 
@@ -96,8 +90,8 @@ public class LispBase {
     }
 
     public static List evalEach(List value, Env env) {
-        List result = null;
-        if (value != null) {
+        List result = List.NULL_VALUE;
+        if (!LispUtils.isNull(value)) {
             result = new List(eval(value.fst, env), evalEach((List) value.snd, env));
         }
         return result;
@@ -156,34 +150,38 @@ public class LispBase {
         return value instanceof String || value instanceof Number;
     }
 
-    public static Object car(List value) {
-        return value.fst;
+    public static Object car(Object value) {
+        if(LispUtils.isNull(value) || !(value instanceof List)) {
+            throw new RuntimeException("not a pair");
+        }
+        return ((List) value).fst;
     }
 
-    public static Object cdr(List value) {
-        return value.snd;
+    public static Object cdr(Object value) {
+        if(LispUtils.isNull(value) || !(value instanceof List)) {
+            throw new RuntimeException("not a pair");
+        }
+        return ((List) value).snd;
     }
 
     public static Object cdar(List value) {
-        return ((List) (cdr(value))).fst;
+        return car(cdr(value));
     }
 
     public static Object cddr(List value) {
-        return ((List) (cdr(value))).snd;
+        return cdr(car(value));
     }
 
     public static Object cddar(List value) {
-        return ((List) cddr(value)).fst;
+        return car(cdr(cdr(value)));
     }
 
     public static void initEnv(final Env env) {
         env.put("+", new PrimitiveProcedure(Procedure.INFINITE_PARAM_LENGTH) {
             public Object onApply(List args) {
                 BigDecimal m = BigDecimal.ZERO;
-                List tmp = args;
-                while (tmp != null) {
-                    m = m.add((BigDecimal) car(tmp));
-                    tmp = (List) tmp.snd;
+                for(Object o : args) {
+                    m = m.add((BigDecimal) o);
                 }
                 return m;
             }
@@ -195,9 +193,8 @@ public class LispBase {
             public Object onApply(List args) {
                 BigDecimal m = (BigDecimal) car(args);
                 List tmp = (List) cdr(args);
-                while (tmp != null) {
-                    m = m.subtract((BigDecimal) car(tmp));
-                    tmp = (List) tmp.snd;
+                for(Object o:tmp) {
+                    m = m.subtract((BigDecimal) o);
                 }
                 return m;
             }
@@ -207,9 +204,10 @@ public class LispBase {
         env.put("*", new PrimitiveProcedure(Procedure.INFINITE_PARAM_LENGTH) {
             @Override
             public Object onApply(List args) {
-                BigDecimal m = (BigDecimal) car(args);
-                List tmp = (List) cdr(args);
-                m = m.multiply((BigDecimal) car(tmp));
+                BigDecimal m = BigDecimal.ONE;
+                for(Object o:args) {
+                    m = m.multiply((BigDecimal) o);
+                }
                 return m;
             }
         });
@@ -218,7 +216,9 @@ public class LispBase {
             public Object onApply(List args) {
                 BigDecimal m = (BigDecimal) car(args);
                 List tmp = (List) cdr(args);
-                m = m.divide((BigDecimal) car(tmp), 10, BigDecimal.ROUND_HALF_UP);
+                for(Object o:tmp) {
+                    m = m.divide((BigDecimal) o);
+                }
                 return m;
             }
         });
@@ -235,30 +235,30 @@ public class LispBase {
 
         env.put("car", new PrimitiveProcedure(1) {
             public Object onApply(List args) {
-                return car((List) args.fst);
+                return car(car(args));
             }
         });
         env.put("cdr", new PrimitiveProcedure(1) {
             public Object onApply(List args) {
-                return cdr((List) args.fst);
+                return cdr(args.fst);
             }
         });
         env.put("cons", new PrimitiveProcedure(2) {
             public Object onApply(List args) {
-                return new List(args.fst, ((List) args.snd).fst);
+                return new List(car(args),cdar(args));
             }
         });
         env.put("display", new PrimitiveProcedure(1) {
             @Override
             public Object onApply(List args) {
-                System.out.print(show(args.fst));
-                return null;
+                System.out.print(show(car(args)));
+                return SpecialValue.VOID;
             }
         });
         env.put("show", new PrimitiveProcedure(1) {
             @Override
             public Object onApply(List args) {
-                return show(args.fst);
+                return show(car(args));
             }
         });
         env.put("eval", new PrimitiveProcedure(1) {
@@ -267,10 +267,11 @@ public class LispBase {
                 return eval((car(args)), env);
             }
         });
+
         env.put("null?", new PrimitiveProcedure(1) {
             @Override
             public Object onApply(List args) {
-                return args == null || car(args) == null;
+                return LispUtils.isNull(car(args));
             }
         });
         env.put(">", new PrimitiveProcedure(2) {
@@ -281,6 +282,7 @@ public class LispBase {
                 return a1.compareTo(a2) > 0;
             }
         });
+
         env.put("<", new PrimitiveProcedure(2) {
             @Override
             public Object onApply(List args) {
@@ -329,13 +331,6 @@ public class LispBase {
                 return !(Boolean) (car(args));
             }
         });
-        env.put("nullcar?", new PrimitiveProcedure(1) {
-            @Override
-            public Object onApply(List args) {
-                List m = (List) car(args);
-                return m == null || m.fst == null;
-            }
-        });
     }
 
     public static boolean loadLibrary(Env env, String path) {
@@ -343,10 +338,6 @@ public class LispBase {
     }
 
     public static String show(Object o) {
-        if (o != null) {
-            return o.toString();
-        } else {
-            return "()";
-        }
+        return o.toString();
     }
 }

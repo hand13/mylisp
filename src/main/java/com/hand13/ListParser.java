@@ -1,5 +1,6 @@
 package com.hand13;
 
+import javax.management.relation.RoleUnresolved;
 import java.io.InputStream;
 import java.math.BigDecimal;
 
@@ -25,16 +26,18 @@ public class ListParser {
             throw new RuntimeException("error parse");
         }
         if (token.equals(")")) {
-            return null;
+            return List.NULL_VALUE;
         }
         ts.back();
-        List header = new List(getNextObject(), null);
+        List header = new List(getNextObject(), List.NULL_VALUE);
         List tmp = header;
         Object o;
+
         while ((o = getNextObject()) != null) {
-            tmp.snd = new List(o, null);
+            tmp.snd = new List(o, List.NULL_VALUE);
             tmp = (List) tmp.snd;
         }
+
         String t = ts.getCurrentToken();
         if (t == null) {
             throw new RuntimeException("parse error");
@@ -116,7 +119,7 @@ public class ListParser {
             String ch = value.substring(2);
             return s2c(ch);
         }
-        return null;
+        throw new RuntimeException("no this way");
     }
 
     private Character s2c(String value) {
@@ -134,6 +137,6 @@ public class ListParser {
         if(value.equals("newline")) {
             return '\n';
         }
-        return null;
+        throw new RuntimeException("no this way");
     }
 }

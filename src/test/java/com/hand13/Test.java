@@ -4,7 +4,7 @@ import java.io.StringBufferInputStream;
 
 public class Test {
     public static void main(String[] args) {
-        ListParser parser = new ListParser(new StringBufferInputStream("(+ 12 (+ 100 100) 12 (car '( 13 15 ) ) )"));
+        ListParser parser = new ListParser(new StringBufferInputStream("(1 2 3 4 5 6)"));
         Object o = parser.getNextObject();
         System.out.println(o);
     }

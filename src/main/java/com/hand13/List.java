@@ -3,7 +3,7 @@ package com.hand13;
 import java.util.Iterator;
 
 public class List implements Iterable<Object>{
-
+    public static List NULL_VALUE = new List(null,null);
     public Object fst;
     public Object snd;
     public List(Object fst,Object snd) {
@@ -14,11 +14,11 @@ public class List implements Iterable<Object>{
     public int length() {
         Object a = this;
         int i = 0;
-        while(a instanceof List) {
+        while(a instanceof List && !LispUtils.isNull(a)) {
             i++;
             a = ((List) a).snd;
         }
-        if(a != null) {
+        if(!LispUtils.isNull(a)) {
             throw new RuntimeException("this is not a p list");
         }
         return i;
@@ -26,6 +26,9 @@ public class List implements Iterable<Object>{
 
     @Override
     public String toString() {
+        if(LispUtils.isNull(this)) {
+            return "()";
+        }
         StringBuilder str = new StringBuilder("( ");
         for(Object o : this) {
             str.append(LispBase.show(o)).append(" ");
@@ -36,8 +39,8 @@ public class List implements Iterable<Object>{
 
     @Override
     public Iterator<Object> iterator() {
-        if(!LispUtils.isPList(this)) {
-            throw  new RuntimeException("not a plist");
+        if(!LispUtils.isList(this)) {
+            throw  new RuntimeException("not a list");
         }
         return new ListIterator();
     }
@@ -50,7 +53,7 @@ public class List implements Iterable<Object>{
 
         @Override
         public boolean hasNext() {
-            return currentNode != null;
+            return !LispUtils.isNull(currentNode);
         }
 
         @Override

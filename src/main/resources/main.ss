@@ -1,2 +1,2 @@
-(define map (lambda (f n ) (if (not (nullcar? n )) (begin (f (car n) ) (map f (cdr n ))) '())))
-(map display '(12 21 12))
+(display (+ 12 12 12 ( - 123 3213 321 )))
+(display (+ 23 23 21321 ))
