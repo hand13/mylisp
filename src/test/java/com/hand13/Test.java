@@ -4,7 +4,7 @@ import java.io.StringBufferInputStream;
 
 public class Test {
     public static void main(String[] args) {
-        ListParser parser = new ListParser(new StringBufferInputStream("(1 2 3 4 5 6)"));
+        ListParser parser = new ListParser(new StringBufferInputStream("(define a 12)"));
         Object o = parser.getNextObject();
         System.out.println(o);
     }

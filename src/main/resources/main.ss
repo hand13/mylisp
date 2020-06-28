@@ -1,2 +1,1 @@
-(display (+ 12 12 12 ( - 123 3213 321 )))
-(display (+ 23 23 21321 ))
+(display ((lambda (x) (+ x x x )) 12))

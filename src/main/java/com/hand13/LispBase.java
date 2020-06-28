@@ -70,7 +70,7 @@ public class LispBase {
         }
         List tmp = exps;
         Object result = null;
-        while (tmp != null) {
+        while (!LispUtils.isNull(tmp)) {
             result = eval(car(tmp), env);
             tmp = (List) cdr(tmp);
         }
@@ -169,7 +169,7 @@ public class LispBase {
     }
 
     public static Object cddr(List value) {
-        return cdr(car(value));
+        return cdr(cdr(value));
     }
 
     public static Object cddar(List value) {
