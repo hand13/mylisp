@@ -1,6 +1,7 @@
 package com.hand13;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 import static com.hand13.Token.*;
 
@@ -331,6 +332,53 @@ public class LispBase {
                 return !(Boolean) (car(args));
             }
         });
+
+        env.put("append", new PrimitiveProcedure(Procedure.INFINITE_PARAM_LENGTH) {
+            @Override
+            public Object onApply(List args) {
+                StringBuilder sb = new StringBuilder();
+                for(Object o : args) {
+                    if(!(o instanceof String)) {
+                        throw new RuntimeException("not a string");
+                    }
+                    sb.append(o);
+                }
+                return sb.toString();
+            }
+        });
+
+        env.put("new-object", new PrimitiveProcedure(Procedure.INFINITE_PARAM_LENGTH) {
+            @Override
+            public Object onApply(List args) {
+                String className = (String) car(args);
+                java.util.List<Object> params = LispUtils.toList((List)(args));
+                try {
+                    Class<?> clazz = Class.forName(className);
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+        });
+
+        env.put("static-method-call", new PrimitiveProcedure(Procedure.INFINITE_PARAM_LENGTH) {
+            @Override
+            public Object onApply(List args) {
+                String methodName = (String) car(args);
+                String className = methodName.substring(0,methodName.lastIndexOf("."));
+                return null;
+            }
+        });
+
+        env.put("object-method-call", new PrimitiveProcedure(Procedure.INFINITE_PARAM_LENGTH) {
+            @Override
+            public Object onApply(List args) {
+                String methodName = (String) car(args);
+                Object target = cdar(args);
+                return null;
+            }
+        });
+
     }
 
     public static boolean loadLibrary(Env env, String path) {
