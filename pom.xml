@@ -8,6 +8,7 @@
     <artifactId>lisp</artifactId>
     <version>0.99</version>
     <description>my lisp machine</description>
+    <packaging>jar</packaging>
     <distributionManagement>
         <repository>
             <id>github</id>
