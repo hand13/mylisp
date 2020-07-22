@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.hand13</groupId>
+    <groupId>club.hand13</groupId>
     <artifactId>lisp</artifactId>
-    <version>0.01</version>
+    <version>0.99</version>
     <description>my lisp machine</description>
     <build>
         <plugins>
