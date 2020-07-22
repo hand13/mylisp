@@ -1,7 +1,11 @@
 package com.hand13;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 import static com.hand13.Token.*;
 
@@ -152,14 +156,14 @@ public class LispBase {
     }
 
     public static Object car(Object value) {
-        if(LispUtils.isNull(value) || !(value instanceof List)) {
+        if (LispUtils.isNull(value) || !(value instanceof List)) {
             throw new RuntimeException("not a pair");
         }
         return ((List) value).fst;
     }
 
     public static Object cdr(Object value) {
-        if(LispUtils.isNull(value) || !(value instanceof List)) {
+        if (LispUtils.isNull(value) || !(value instanceof List)) {
             throw new RuntimeException("not a pair");
         }
         return ((List) value).snd;
@@ -181,7 +185,7 @@ public class LispBase {
         env.put("+", new PrimitiveProcedure(Procedure.INFINITE_PARAM_LENGTH) {
             public Object onApply(List args) {
                 BigDecimal m = BigDecimal.ZERO;
-                for(Object o : args) {
+                for (Object o : args) {
                     m = m.add((BigDecimal) o);
                 }
                 return m;
@@ -194,7 +198,7 @@ public class LispBase {
             public Object onApply(List args) {
                 BigDecimal m = (BigDecimal) car(args);
                 List tmp = (List) cdr(args);
-                for(Object o:tmp) {
+                for (Object o : tmp) {
                     m = m.subtract((BigDecimal) o);
                 }
                 return m;
@@ -206,7 +210,7 @@ public class LispBase {
             @Override
             public Object onApply(List args) {
                 BigDecimal m = BigDecimal.ONE;
-                for(Object o:args) {
+                for (Object o : args) {
                     m = m.multiply((BigDecimal) o);
                 }
                 return m;
@@ -217,7 +221,7 @@ public class LispBase {
             public Object onApply(List args) {
                 BigDecimal m = (BigDecimal) car(args);
                 List tmp = (List) cdr(args);
-                for(Object o:tmp) {
+                for (Object o : tmp) {
                     m = m.divide((BigDecimal) o);
                 }
                 return m;
@@ -246,7 +250,7 @@ public class LispBase {
         });
         env.put("cons", new PrimitiveProcedure(2) {
             public Object onApply(List args) {
-                return new List(car(args),cdar(args));
+                return new List(car(args), cdar(args));
             }
         });
         env.put("display", new PrimitiveProcedure(1) {
@@ -337,8 +341,8 @@ public class LispBase {
             @Override
             public Object onApply(List args) {
                 StringBuilder sb = new StringBuilder();
-                for(Object o : args) {
-                    if(!(o instanceof String)) {
+                for (Object o : args) {
+                    if (!(o instanceof String)) {
                         throw new RuntimeException("not a string");
                     }
                     sb.append(o);
@@ -347,14 +351,42 @@ public class LispBase {
             }
         });
 
+        env.put("number->string", new PrimitiveProcedure(1) {
+            @Override
+            public Object onApply(List args) {
+                Object o = car(args);
+                if (!(o instanceof BigDecimal)) {
+                    throw new RuntimeException("not a number");
+                }
+                return o.toString();
+            }
+        });
+
+        env.put("string->number", new PrimitiveProcedure(1) {
+            @Override
+            public Object onApply(List args) {
+                Object o = car(args);
+                if (!(o instanceof String)) {
+                    throw new RuntimeException("not a String");
+                }
+                return new BigDecimal(o.toString());
+            }
+        });
+
         env.put("new-object", new PrimitiveProcedure(Procedure.INFINITE_PARAM_LENGTH) {
             @Override
             public Object onApply(List args) {
                 String className = (String) car(args);
-                java.util.List<Object> params = LispUtils.toList((List)(args));
+                java.util.List<Object> params = LispUtils.toList((List) cdr(args));
                 try {
                     Class<?> clazz = Class.forName(className);
-                } catch (ClassNotFoundException e) {
+                    Class<?>[] sig = new Class[params.size()];
+                    for (int i = 0; i < params.size(); i++) {
+                        sig[i] = params.get(i).getClass();
+                    }
+                    Constructor<?> constructor = clazz.getConstructor(sig);
+                    return constructor.newInstance(params.toArray());
+                } catch (ClassNotFoundException | InstantiationException | InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
                     e.printStackTrace();
                 }
                 return null;
@@ -365,7 +397,7 @@ public class LispBase {
             @Override
             public Object onApply(List args) {
                 String methodName = (String) car(args);
-                String className = methodName.substring(0,methodName.lastIndexOf("."));
+                String className = methodName.substring(0, methodName.lastIndexOf("."));
                 return null;
             }
         });
