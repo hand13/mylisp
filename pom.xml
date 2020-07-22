@@ -13,7 +13,7 @@
         <repository>
             <id>github</id>
             <name>GitHub hand13 Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/hand13/mvnpackage</url>
+            <url>https://maven.pkg.github.com/hand13/mylisp</url>
         </repository>
     </distributionManagement>
     <build>
