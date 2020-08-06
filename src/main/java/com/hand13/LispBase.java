@@ -2,6 +2,7 @@ package com.hand13;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -396,8 +397,25 @@ public class LispBase {
         env.put("static-method-call", new PrimitiveProcedure(Procedure.INFINITE_PARAM_LENGTH) {
             @Override
             public Object onApply(List args) {
-                String methodName = (String) car(args);
-                String className = methodName.substring(0, methodName.lastIndexOf("."));
+                String method = (String) car(args);
+                String className = method.substring(0, method.lastIndexOf("."));
+                String methodName = method.substring(method.lastIndexOf(".") + 1);
+                java.util.List<Object> params = LispUtils.toList((List) cdr(args));
+                try {
+                    Class<?> clazz = Class.forName(className);
+                    Class<?>[] sig = new Class[params.size()];
+                    for (int i = 0; i < params.size(); i++) {
+                        sig[i] = params.get(i).getClass();
+                    }
+                    Method md = clazz.getMethod(methodName, sig);
+                    Object result = md.invoke(null, params);
+                    if (result == null) {
+                        return SpecialValue.VOID;
+                    }
+                    return result;
+                } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+                    e.printStackTrace();
+                }
                 return null;
             }
         });
