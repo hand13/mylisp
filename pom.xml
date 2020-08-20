@@ -6,7 +6,7 @@
 
     <groupId>club.hand13</groupId>
     <artifactId>lisp</artifactId>
-    <version>1.00</version>
+    <version>1.01</version>
     <description>my lisp machine</description>
     <packaging>jar</packaging>
     <distributionManagement>
