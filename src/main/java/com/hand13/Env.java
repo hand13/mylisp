@@ -4,25 +4,34 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Env {
-    public Map<String,Object> env;
+    public Map<String, Object> env;
     public Env up;
+
     public Env() {
         env = new HashMap<>();
+    }
+
+    public Env(Env up) {
+        this();
+        this.up = up;
     }
 
     public Env(Map<String, Object> env, Env up) {
         this.env = env;
         this.up = up;
     }
-    public void put(String name,Object value) {
-        this.env.put(name,value);
+
+    public void put(String name, Object value) {
+        this.env.put(name, value);
     }
+
     public void registerProcedure(String name, Procedure procedure) {
-        this.env.put(name,procedure);
+        this.env.put(name, procedure);
     }
-    public Object getValue(String symbol){
+
+    public Object getValue(String symbol) {
         Object result = this.env.get(symbol);
-        if(result == null && up != null) {
+        if (result == null && up != null) {
             result = up.getValue(symbol);
         }
         return result;

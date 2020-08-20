@@ -1,12 +1,11 @@
 package com.hand13;
 
+import com.hand13.exception.LispException;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 
 import static com.hand13.Token.*;
 
@@ -18,8 +17,11 @@ public class LispBase {
             return apply((Procedure) o.fst, (List) o.snd);
 
         } else if (isSymbol(value)) {
-            return env.getValue(((Symbol) value).value);
-
+            Object result = env.getValue(((Symbol) value).value);
+            if (result == null) {
+                throw new LispException("no " + value + " symbol");
+            }
+            return result;
         } else if (isPrimitive(value)) {
             return value;
 
