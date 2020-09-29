@@ -51,7 +51,7 @@ public class LispBase {
 
     public static Object IF(Object value, Env env) {
         List exp = (List) value;
-        List predicate = (List) cdar(exp);
+        Object predicate = cdar(exp);
         Object yes = cddar(exp);
         Object no = (cddar((List) cdr(exp)));
         Boolean p = (Boolean) (eval(predicate, env));
@@ -155,7 +155,10 @@ public class LispBase {
     }
 
     public static boolean isPrimitive(Object value) {
-        return value instanceof String || value instanceof Number || value instanceof Character;
+        return value instanceof String
+                || value instanceof Number
+                || value instanceof Character
+                || value instanceof Boolean;
     }
 
     public static Object car(Object value) {
