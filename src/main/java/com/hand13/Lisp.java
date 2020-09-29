@@ -84,7 +84,7 @@ public class Lisp {
         lisp.doString("(display \"hello world\")");
         lisp.doString("(display \"hello world\")");
         lisp.doString("(display \"hello world\")");
-        lisp.doString("logger \"info\" \"die\")");
+        lisp.doString("(logger \"info\" \"die\")");
         lisp.doFile(filepath.getPath());
     }
 }

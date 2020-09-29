@@ -155,7 +155,7 @@ public class LispBase {
     }
 
     public static boolean isPrimitive(Object value) {
-        return value instanceof String || value instanceof Number;
+        return value instanceof String || value instanceof Number || value instanceof Character;
     }
 
     public static Object car(Object value) {
