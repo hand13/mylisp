@@ -51,9 +51,9 @@ public class LispBase {
 
     public static Object IF(Object value, Env env) {
         List exp = (List) value;
-        Object predicate = cdar(exp);
-        Object yes = cddar(exp);
-        Object no = (cddar((List) cdr(exp)));
+        Object predicate = cadr(exp);
+        Object yes = caddr(exp);
+        Object no = (caddr((List) cdr(exp)));
         Boolean p = (Boolean) (eval(predicate, env));
         if (p) {
             return eval(yes, env);
@@ -65,7 +65,7 @@ public class LispBase {
 
     public static Object let(Object value, Env env) {
         List stat = (List) value;
-        List varLet = (List) cdar(stat);
+        List varLet = (List) cadr(stat);
         List expr = (List) cddr(stat);
         //转换为lambda + param求值
         return null;
@@ -87,7 +87,7 @@ public class LispBase {
 
     public static void define(Object value, Env env) {
         List def = (List) value;
-        Symbol varSymbol = (Symbol) cdar(def);
+        Symbol varSymbol = (Symbol) cadr(def);
         Object exp = (car((List) (cddr(def))));
         String var = varSymbol.value;
         env.put(var, eval(exp, env));
@@ -175,7 +175,7 @@ public class LispBase {
         return ((List) value).snd;
     }
 
-    public static Object cdar(List value) {
+    public static Object cadr(List value) {
         return car(cdr(value));
     }
 
@@ -183,7 +183,7 @@ public class LispBase {
         return cdr(cdr(value));
     }
 
-    public static Object cddar(List value) {
+    public static Object caddr(List value) {
         return car(cdr(cdr(value)));
     }
 
@@ -256,7 +256,7 @@ public class LispBase {
         });
         env.put("cons", new PrimitiveProcedure(2) {
             public Object onApply(List args) {
-                return new List(car(args), cdar(args));
+                return new List(car(args), cadr(args));
             }
         });
         env.put("display", new PrimitiveProcedure(1) {
@@ -289,7 +289,7 @@ public class LispBase {
             @Override
             public Object onApply(List args) {
                 BigDecimal a1 = (BigDecimal) car(args);
-                BigDecimal a2 = (BigDecimal) cdar(args);
+                BigDecimal a2 = (BigDecimal) cadr(args);
                 return a1.compareTo(a2) > 0;
             }
         });
@@ -298,7 +298,7 @@ public class LispBase {
             @Override
             public Object onApply(List args) {
                 BigDecimal a1 = (BigDecimal) car(args);
-                BigDecimal a2 = (BigDecimal) cdar(args);
+                BigDecimal a2 = (BigDecimal) cadr(args);
                 return a1.compareTo(a2) < 0;
             }
         });
@@ -306,7 +306,7 @@ public class LispBase {
             @Override
             public Object onApply(List args) {
                 BigDecimal a1 = (BigDecimal) car(args);
-                BigDecimal a2 = (BigDecimal) cdar(args);
+                BigDecimal a2 = (BigDecimal) cadr(args);
                 return a1.equals(a2);
             }
         });
@@ -429,7 +429,7 @@ public class LispBase {
             @Override
             public Object onApply(List args) {
                 String methodName = (String) car(args);
-                Object target = cdar(args);
+                Object target = cadr(args);
                 return null;
             }
         });

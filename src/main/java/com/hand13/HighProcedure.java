@@ -17,7 +17,7 @@ public class HighProcedure implements Procedure {
             throw new RuntimeException("not a lambda");
         }
         this.env =env;
-        List a = (List)LispBase.cdar(lambda);
+        List a = (List)LispBase.cadr(lambda);
         //lambda 体转换为begin结构
         this.exp = (List)LispBase.cddr(lambda);
         this.exp = new List(BEGIN,this.exp);

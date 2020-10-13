@@ -22,7 +22,7 @@ public class Lisp {
             @Override
             public Object onApply(List args) {
                 String level = (String) LispBase.car(args);
-                String msg = (String) LispBase.cdar(args);
+                String msg = (String) LispBase.cadr(args);
                 if ("debug".equalsIgnoreCase(level)) {
                     logger.debug(msg);
                 } else if ("info".equalsIgnoreCase(level)) {
